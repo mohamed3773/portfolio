@@ -1,2 +1,4 @@
 node_modules
-mcp_config.json
+.next
+.vercel
+.vscode
