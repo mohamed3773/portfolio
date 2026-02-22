@@ -11,13 +11,13 @@ export const viewport: Viewport = {
 };
 
 const SITE_URL = "https://mohamedtech.me";
-const BRAND_NAME = "Mhamed";
-const OG_IMAGE = `${SITE_URL}/profile.png`;
+const BRAND_NAME = "Mohamed";
+const OG_IMAGE = `${SITE_URL}/og-image.jpg`; // Use a dedicated OG image (recommended)
 
 export const metadata: Metadata = {
-  title: "Mhamed | Full Stack Developer",
+  title: "Mohamed | Full Stack Developer & Scalable Web Architect",
   description:
-    "Senior Full Stack Developer specializing in modern web products, Next.js, and scalable architecture.",
+    "Full Stack Developer building scalable, high-performance web applications with Next.js, TypeScript, and modern cloud architecture.",
   keywords: [
     "Full Stack Developer",
     "Next.js",
@@ -25,9 +25,11 @@ export const metadata: Metadata = {
     "TypeScript",
     "Web3",
     "Frontend Engineer",
-    "Mhamed",
+    "Software Engineer",
+    "Mohamed",
+    "Scalable Architecture",
   ],
-  authors: [{ name: "Mhamed" }],
+  authors: [{ name: "Mohamed" }],
 
   // Required for absolute URLs in Open Graph and Twitter metadata
   metadataBase: new URL(SITE_URL),
@@ -39,9 +41,9 @@ export const metadata: Metadata = {
 
   // Open Graph configuration for social media previews
   openGraph: {
-    title: "Mhamed | Full Stack Developer",
+    title: "Mohamed | Full Stack Developer & Scalable Web Architect",
     description:
-      "Senior Full Stack Developer specializing in modern web products, Next.js, and scalable architecture.",
+      "Full Stack Developer building scalable, high-performance web applications with Next.js, TypeScript, and modern cloud architecture.",
     url: SITE_URL,
     siteName: BRAND_NAME,
     type: "website",
@@ -51,7 +53,7 @@ export const metadata: Metadata = {
         url: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: `${BRAND_NAME} - Profile`,
+        alt: "Mohamed - Full Stack Developer",
       },
     ],
   },
@@ -59,9 +61,9 @@ export const metadata: Metadata = {
   // Twitter Card configuration
   twitter: {
     card: "summary_large_image",
-    title: "Mhamed | Full Stack Developer",
+    title: "Mohamed | Full Stack Developer & Scalable Web Architect",
     description:
-      "Senior Full Stack Developer specializing in modern web products, Next.js, and scalable architecture.",
+      "Full Stack Developer building scalable, high-performance web applications with Next.js, TypeScript, and modern cloud architecture.",
     images: [OG_IMAGE],
   },
 };
@@ -73,15 +75,20 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   // Structured data for search engines (identity + logo recognition)
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: BRAND_NAME,
+    name: "Mohamed",
+    jobTitle: "Full Stack Developer",
     url: SITE_URL,
     image: `${SITE_URL}/profile.png`,
     logo: `${SITE_URL}/profile.png`,
+    sameAs: [
+      "https://github.com/mohamed3773",
+      // Add your LinkedIn when ready:
+      // "https://www.linkedin.com/in/YOUR_USERNAME/"
+    ],
   };
 
   return (
