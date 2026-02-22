@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Fira_Code } from "next/font/google";
+import Script from "next/script"; // ✅ Added
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -12,7 +13,7 @@ export const viewport: Viewport = {
 
 const SITE_URL = "https://mohamedtech.me";
 const BRAND_NAME = "Mohamed";
-const OG_IMAGE = `${SITE_URL}/og-image.jpg`; // Use a dedicated OG image (recommended)
+const OG_IMAGE = `${SITE_URL}/og-image.jpg`;
 
 export const metadata: Metadata = {
   title: "Mohamed | Full Stack Developer & Scalable Web Architect",
@@ -30,16 +31,10 @@ export const metadata: Metadata = {
     "Scalable Architecture",
   ],
   authors: [{ name: "Mohamed" }],
-
-  // Required for absolute URLs in Open Graph and Twitter metadata
   metadataBase: new URL(SITE_URL),
-
-  // Browser favicon (place favicon.ico inside /public)
   icons: {
     icon: "/favicon.ico",
   },
-
-  // Open Graph configuration for social media previews
   openGraph: {
     title: "Mohamed | Full Stack Developer & Scalable Web Architect",
     description:
@@ -57,8 +52,6 @@ export const metadata: Metadata = {
       },
     ],
   },
-
-  // Twitter Card configuration
   twitter: {
     card: "summary_large_image",
     title: "Mohamed | Full Stack Developer & Scalable Web Architect",
@@ -75,7 +68,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Structured data for search engines (identity + logo recognition)
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -84,11 +76,7 @@ export default function RootLayout({
     url: SITE_URL,
     image: `${SITE_URL}/profile.png`,
     logo: `${SITE_URL}/profile.png`,
-    sameAs: [
-      "https://github.com/mohamed3773",
-      // Add your LinkedIn when ready:
-      // "https://www.linkedin.com/in/YOUR_USERNAME/"
-    ],
+    sameAs: ["https://github.com/mohamed3773"],
   };
 
   return (
@@ -111,6 +99,12 @@ export default function RootLayout({
         <ThemeProvider defaultTheme="dark" storageKey="theme-dark-only">
           {children}
         </ThemeProvider>
+
+        {/* ✅ Simple Analytics Script */}
+        <Script
+          src="https://scripts.simpleanalyticscdn.com/latest.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
