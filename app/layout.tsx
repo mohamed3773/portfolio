@@ -16,7 +16,7 @@ const BRAND_NAME = "Mohamed";
 const OG_IMAGE = `${SITE_URL}/og-image.jpg`;
 
 export const metadata: Metadata = {
-  title: "Mohamed | Full Stack Developer & Scalable Web Architect",
+  title: "Mohamed Qarabash | Full Stack Developer & Scalable Web Architect",
   description:
     "Full Stack Developer building scalable, high-performance web applications with Next.js, TypeScript, and modern cloud architecture.",
   keywords: [
