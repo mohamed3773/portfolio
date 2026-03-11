@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     icon: "/favicon.ico",
   },
   openGraph: {
-    title: "Mohamed | Full Stack Developer & Scalable Web Architect",
+    title: "Mohamed Qarabash | Full Stack Developer & Scalable Web Architect",
     description:
       "Full Stack Developer building scalable, high-performance web applications with Next.js, TypeScript, and modern cloud architecture.",
     url: SITE_URL,
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mohamed | Full Stack Developer & Scalable Web Architect",
+    title: "Mohamed Qarabash | Full Stack Developer & Scalable Web Architect",
     description:
       "Full Stack Developer building scalable, high-performance web applications with Next.js, TypeScript, and modern cloud architecture.",
     images: [OG_IMAGE],
