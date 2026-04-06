@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Fira_Code } from "next/font/google";
-import Script from "next/script"; // ✅ Added
+import Script from "next/script";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -100,13 +100,20 @@ export default function RootLayout({
           {children}
         </ThemeProvider>
 
-        {/* ✅ Simple Analytics Script */}
+        {/* ElevenLabs Widget */}
+        <elevenlabs-convai agent-id="agent_1901kngx7wsjfq8v73mkddts0qjz"></elevenlabs-convai>
+
+        <Script
+          src="https://unpkg.com/@elevenlabs/convai-widget-embed"
+          strategy="afterInteractive"
+        />
+
+        {/* Simple Analytics */}
         <Script
           src="https://scripts.simpleanalyticscdn.com/latest.js"
           strategy="afterInteractive"
         />
       </body>
-      <elevenlabs-convai agent-id="agent_1901kngx7wsjfq8v73mkddts0qjz"></elevenlabs-convai><script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
     </html>
   );
 }
