@@ -106,6 +106,7 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
       </body>
+      <elevenlabs-convai agent-id="agent_1901kngx7wsjfq8v73mkddts0qjz"></elevenlabs-convai><script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
     </html>
   );
 }
