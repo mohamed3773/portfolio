@@ -100,9 +100,6 @@ export default function RootLayout({
           {children}
         </ThemeProvider>
 
-        {/* ElevenLabs Widget */}
-        <elevenlabs-convai agent-id="agent_1901kngx7wsjfq8v73mkddts0qjz"></elevenlabs-convai>
-
         <Script
           src="https://unpkg.com/@elevenlabs/convai-widget-embed"
           strategy="afterInteractive"
