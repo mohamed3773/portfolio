@@ -2,6 +2,18 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Fira_Code } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
+
+// ✅ تعريف الوسم لـ TypeScript لمنع خطأ الـ Build في Vercel
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'elevenlabs-convai': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
+        'agent-id': string;
+      };
+    }
+  }
+}
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const firaCode = Fira_Code({ subsets: ["latin"], variable: "--font-mono" });
@@ -17,51 +29,27 @@ const OG_IMAGE = `${SITE_URL}/og-image.jpg`;
 
 export const metadata: Metadata = {
   title: "Mohamed Qarabash | Full Stack Developer & Scalable Web Architect",
-  description:
-    "Full Stack Developer building scalable, high-performance web applications with Next.js, TypeScript, and modern cloud architecture.",
-  keywords: [
-    "Full Stack Developer",
-    "Next.js",
-    "React",
-    "TypeScript",
-    "Web3",
-    "Frontend Engineer",
-    "Software Engineer",
-    "Mohamed",
-    "Scalable Architecture",
-  ],
+  description: "Full Stack Developer building scalable, high-performance web applications with Next.js, TypeScript, and modern cloud architecture.",
+  keywords: ["Full Stack Developer", "Next.js", "React", "TypeScript", "Web3", "Frontend Engineer", "Software Engineer", "Mohamed", "Scalable Architecture"],
   authors: [{ name: "Mohamed" }],
   metadataBase: new URL(SITE_URL),
-  icons: {
-    icon: "/favicon.ico",
-  },
+  icons: { icon: "/favicon.ico" },
   openGraph: {
     title: "Mohamed Qarabash | Full Stack Developer & Scalable Web Architect",
-    description:
-      "Full Stack Developer building scalable, high-performance web applications with Next.js, TypeScript, and modern cloud architecture.",
+    description: "Full Stack Developer building scalable, high-performance web applications with Next.js, TypeScript, and modern cloud architecture.",
     url: SITE_URL,
     siteName: BRAND_NAME,
     type: "website",
     locale: "en_US",
-    images: [
-      {
-        url: OG_IMAGE,
-        width: 1200,
-        height: 630,
-        alt: "Mohamed - Full Stack Developer",
-      },
-    ],
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "Mohamed - Full Stack Developer" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Mohamed Qarabash | Full Stack Developer & Scalable Web Architect",
-    description:
-      "Full Stack Developer building scalable, high-performance web applications with Next.js, TypeScript, and modern cloud architecture.",
+    description: "Full Stack Developer building scalable, high-performance web applications with Next.js, TypeScript, and modern cloud architecture.",
     images: [OG_IMAGE],
   },
 };
-
-import { ThemeProvider } from "@/components/theme-provider";
 
 export default function RootLayout({
   children,
@@ -100,6 +88,8 @@ export default function RootLayout({
           {children}
         </ThemeProvider>
 
+        {/* ✅ ElevenLabs Conversational AI Widget */}
+        <elevenlabs-convai agent-id="agent_1901kngx7wsjfq8v73mkddts0qjz"></elevenlabs-convai>
         <Script
           src="https://unpkg.com/@elevenlabs/convai-widget-embed"
           strategy="afterInteractive"
